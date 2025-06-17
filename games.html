@@ -4,23 +4,17 @@
     <meta charset="UTF-8">
     <title>CardMasters Website</title> <!-- creates title of webpage-->
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
-<body> <!--body contains visible content within a webpage-->
+<body>
+
 <header>
     <h1>Cardmasters</h1>
 </header>
 
-<link rel="icon" type="image/png" href="images/favicon.png">
-
-
-<main>
-    <h3>
-
-    </h3>
-</main>
+<main><h3></h3></main>
 <h2></h2>
 <h3></h3>
-</body>
 
 <nav class="navbar">
     <ul>
@@ -29,87 +23,187 @@
     </ul>
 </nav>
 
-<!-- Left video background -->
+<!-- Video Backgrounds -->
 <video class="bg-left" autoplay muted loop>
     <source src="Left-Background.mp4" type="video/mp4">
 </video>
-
 <video class="bg-left2" autoplay muted loop>
     <source src="Left-Background2.mp4" type="video/mp4">
 </video>
-<!-- Right video background -->
-
 <video class="bg-right" autoplay muted loop>
     <source src="Right-Background.mp4" type="video/mp4">
 </video>
-
 <video class="bg-right2" autoplay muted loop>
     <source src="Right-Background2.mp4" type="video/mp4">
 </video>
 
-
+<!-- BS Game Box -->
 <div class="box5">
     <h1>BS</h1>
-    <a class="button" href="#popup1">Click here to play.</a>
+    <a class="button" href="#">Click here to play.</a>
 </div>
 
-<div id="popup1" class="overlay">
-    <div class="popup">
-        <h2>BS</h2>
-        <h3>
-            Unfortunately, as the game run on Java, the website does not support them.
-            Please refer to https://github.com/danylo8/CardMasters-Website to play the game.
-        </h3>
-        <a class="close" href="#">&times;</a>
+<!-- ✨ BS Game Popup (unchanged) -->
+<div id="bs-popup" class="popup">
+    <div class="popup-content1">
+        <!-- Opponent card count -->
+        <div class="opponent-info">
+            Opponent Cards: <span id="opponent-count">0</span>
+        </div>
+
+        <!-- Current claim and pile section -->
+        <div class="pile-section">
+            <div class="claim">
+                Current Claim: <span id="claim-label"></span>
+            </div>
+            <img src="cards/BACK.png" alt="Pile" class="pile-card" />
+
+            <div class="pile-count">
+                Pile Cards: <span id="pile-count">0</span>
+            </div>
+        </div>
+
+        <!-- Player card count -->
+        <div class="player-info">
+            Your Cards: <span id="player-count">0</span>
+        </div>
+
+        <!-- Player hand -->
+        <div id="player-hand" class="hand"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button onclick="callBS()">Call BS</button>
+            <button onclick="closePopup()">Exit</button>
+        </div>
+
+        <!-- Message log -->
+        <div id="message" class="log-box">Welcome to BS!</div>
     </div>
 </div>
 
+
+
 <div class="box6">
     <h1>Spit</h1>
-    <a class="button" href="#popup2">Click here to play.</a>
+    <a class="button" href="#">Click here to play.</a>
 </div>
 
-<div id="popup2" class="overlay">
-    <div class="popup">
-        <h2>Spit</h2>
+<div id="spit-popup" class="popup">
+    <div class="popup-content2">
         <h3>
             Unfortunately, as the game run on Java, the website does not support them.
             Please refer to https://github.com/danylo8/CardMasters-Website to play the game.
         </h3>
-        <a class="close" href="#">&times;</a>
+<!--        <a class="close" href="#">&times;</a>-->
+
+        <div class="controls">
+            <button onclick="closePopup1()">Exit</button>
+        </div>
+
     </div>
 </div>
 
 
 <div class="box7">
     <h1>Spoons</h1>
-    <a class="button" href="#popup3">Click here to play.</a>
+    <a class="button" href="#">Click here to play.</a>
 </div>
 
-<div id="popup3" class="overlay">
-    <div class="popup">
-        <h2>Spoons</h2>
+<div id="spoons-popup" class="popup">
+    <div class="popup-content3">
         <h3>
             Unfortunately, as the game run on Java, the website does not support them.
             Please refer to https://github.com/danylo8/CardMasters-Website to play the game.
         </h3>
-        <a class="close" href="#">&times;</a>
+<!--        <a class="close" href="#">&times;</a>-->
+        <div class="controls">
+            <button onclick="closePopup2()">Exit</button>
+        </div>
+
     </div>
 </div>
 
 <div class="box8">
     <h1>Cuarenta</h1>
-    <a class="button" href="#popup4">Click here to play.</a>
+    <a class="button" href="#">Click here to play.</a>
 </div>
 
-<div id="popup4" class="overlay">
-    <div class="popup">
-        <h2>Cuarenta</h2>
+<div id="cuarenta-popup" class="popup">
+    <div class="popup-content4">
         <h3>
             Unfortunately, this game is not yet ready. Come back soon.
         </h3>
-        <a class="close" href="#">&times;</a>
+<!--        <a class="close" href="#">&times;</a>-->
+        <div class="controls">
+            <button onclick="closePopup3()">Exit</button>
+        </div>
+
     </div>
 </div>
 
+<script>
 
+    document.querySelector('.box5 .button').addEventListener('click', function () {
+        // Show the BS popup
+        document.getElementById('bs-popup').style.display = 'block';
+
+        // Load the BS game script only once
+        if (!window.bsLoaded) {
+            const script = document.createElement('script');
+            script.src = 'BS.js';
+            document.body.appendChild(script);
+            window.bsLoaded = true;
+        }
+    });
+</script>
+
+<script>
+
+    document.querySelector('.box6 .button').addEventListener('click', function () {
+        // Show the BS popup
+        document.getElementById('spit-popup').style.display = 'block';
+    });
+</script>
+
+<script>
+
+    document.querySelector('.box7 .button').addEventListener('click', function () {
+        // Show the BS popup
+        document.getElementById('spoons-popup').style.display = 'block';
+    });
+</script>
+
+
+<script>
+
+    document.querySelector('.box8 .button').addEventListener('click', function () {
+        // Show the BS popup
+        document.getElementById('cuarenta-popup').style.display = 'block';
+    });
+
+
+function closePopup() {
+    document.getElementById('bs-popup').style.display = 'none';
+
+}
+
+function closePopup1() {
+    document.getElementById('spit-popup').style.display = 'none';
+
+}
+
+function closePopup2() {
+    document.getElementById('spoons-popup').style.display = 'none';
+
+}
+
+function closePopup3() {
+    document.getElementById('cuarenta-popup').style.display = 'none';
+
+}
+</script>
+}
+
+</body>
+</html>
