@@ -29,6 +29,7 @@ function intitalizeDeck() {
     shuffleCards(originalDeck);
 }
 
+
 function dealCards() {
     playerDeck = [];
     oppsDeck = [];
