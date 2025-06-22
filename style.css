@@ -577,17 +577,17 @@ button:hover {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: calc(16 * 34px + 15 * 1.73cm);
     height: 100vh;
     display: grid;
-    grid-template-columns: repeat(16, 50px); /* adjust as needed */
-    grid-template-rows: repeat(10, 70px);
-    gap: 25px 20px; /* row-gap, column-gap */
-    justify-content: center;
-    align-content: center;
+    grid-template-columns: repeat(16, 34px);
+    grid-template-rows: repeat(10, 48px);
+    column-gap: 1.73cm;
+    row-gap: 1.57cm;
     pointer-events: none;
     z-index: -1;
 }
+
 
 
 @keyframes spinAndPop {
