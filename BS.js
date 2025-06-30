@@ -10,6 +10,8 @@ let expectedCard = 0;
 let lastExpectedCard = 0;
 let playerTurn = true;
 
+
+
 function shuffleCards(deck) {
     for (let i = 0; i < deck.length; i++) {
         let j = Math.floor(Math.random() * deck.length);
@@ -85,6 +87,7 @@ function updateUI() {
         card.onclick = function () { playerMove(i); };
         playerHand.appendChild(card);
     }
+
 
     document.getElementById('player-count').innerText = playerDeck.length;
     document.getElementById('opponent-count').innerText = oppsDeck.length;

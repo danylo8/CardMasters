@@ -429,13 +429,6 @@ h2{
 }
 
 
-.pile-card {
-    width: 60px;
-    height: 90px;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-}
-
 
 .pile-count {
     margin-top: 4px;
@@ -610,4 +603,49 @@ button:hover {
     animation: spinAndPop 6s infinite ease-in-out;
     transform-origin: center;
     transition: transform 0.5s ease;
+}
+
+.table {
+    width: 130px;
+    height: 130px;
+    display: block;
+    margin: 0 auto 15px auto;
+    position: relative; /* or static */
+    z-index: 1;
+}
+
+.pile-card {
+    width: 30px;
+    height: 45px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+
+.Player-Overhead
+{
+    width: 175px;
+    height: 200px;
+    position: absolute;
+    top: 36%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+}
+
+.Mascot-Overhead
+{
+    width: 181px;
+    height: 181px;
+    position: absolute;
+    top: 23%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
