@@ -1,5 +1,5 @@
 const totalImages = 44;
-const cols = 16;
+const cols = 24;
 const rows = 10;
 const container = document.getElementById('bg-grid');
 
