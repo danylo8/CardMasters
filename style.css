@@ -573,7 +573,7 @@ button:hover {
     width: calc(16 * 34px + 15 * 1.73cm);
     height: 100vh;
     display: grid;
-    grid-template-columns: repeat(16, 34px);
+    grid-template-columns: repeat(20, 34px);
     grid-template-rows: repeat(10, 48px);
     column-gap: 1.73cm;
     row-gap: 1.57cm;
