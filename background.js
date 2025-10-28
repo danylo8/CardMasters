@@ -9,3 +9,4 @@ for (let i = 0; i < cols * rows; i++) {
     img.src = `card-background-images/Image${num}.png`;
     container.appendChild(img);
 }
+ 
