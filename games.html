@@ -36,12 +36,11 @@
 <div id="bs-popup" class="popup">
     <div class="popup-content1">
 
-        <!-- Opponent card count -->
+
         <div class="opponent-info">
             Opponent Cards: <span id="opponent-count">0</span>
         </div>
 
-        <!-- Current claim and pile section -->
         <div class="pile-section">
             <div class="claim">
                 Current Claim: <span id="claim-label"></span>
@@ -61,15 +60,12 @@
         </div>
 
 
-        <!-- Player card count -->
         <div class="player-info">
             Your Cards: <span id="player-count">0</span>
         </div>
 
-        <!-- Player hand -->
         <div id="player-hand" class="hand"></div>
 
-        <!-- Controls -->
         <div class="controls">
             <button onclick="callBS()">Call BS</button>
             <button onclick="closePopup()">Exit</button>
@@ -111,16 +107,31 @@
 </div>
 
 <div id="spoons-popup" class="popup">
-    <div class="popup-content3">
-        <h3>
-            Unfortunately, as the game run on Java, the website does not support them.
-            Please refer to https://github.com/danylo8/CardMasters-Website to play the game.
-        </h3>
-<!--        <a class="close" href="#">&times;</a>-->
+    <div class="popup-content1">
+
+
+        <div class="pile-section">
+
+            <div class="pile-count">
+                Pile Cards: <span id="pile-count-1">0</span>
+            </div>
+
+            <img src="images/Table_Overhead.png" alt="Table" class="table" />
+            <img src="cards/BACK.png" alt="Pile" class="pile-card" />
+            <img src="images/Mascot_Overhead.png" alt="Mascot_Overhead" class="mascot-overhead" />
+            <img src="images/Player_Overhead.png" alt="Player_Overhead" class="player-overhead" />
+        </div>
+
+
+
+        <div id="player-hand-1" class="hand"></div>
+
         <div class="controls">
+            <button onclick="grabSpoon()">Grab Spoon</button>
             <button onclick="closePopup2()">Exit</button>
         </div>
 
+        <div id="message-1" class="log-box">Welcome to Spoons!</div>
     </div>
 </div>
 
@@ -142,13 +153,26 @@
     </div>
 </div>
 
+
+
+<div id="card-choice-popup" class="popup" style="display: none;">
+    <div class="popup-content-choice">
+        <h2 id="card-choice-text">Do you want to keep this card?</h2>
+        <div class="controls">
+            <button class="button" id="card-keep">Keep</button>
+            <button class="button" id="card-pass">Pass</button>
+        </div>
+    </div>
+</div>
+
+
 <script>
 
     document.querySelector('.box5 .button').addEventListener('click', function () {
-        // Show the BS popup
+
         document.getElementById('bs-popup').style.display = 'block';
 
-        // Load the BS game script only once
+
         if (!window.bsLoaded) {
             const script = document.createElement('script');
             script.src = 'BS.js';
@@ -167,18 +191,24 @@
 </script>
 
 <script>
-
     document.querySelector('.box7 .button').addEventListener('click', function () {
-        // Show the BS popup
         document.getElementById('spoons-popup').style.display = 'block';
+
+
+        if (!window.spoonsLoaded) {
+            const script = document.createElement('script');
+            script.src = 'Spoons.js';
+            document.body.appendChild(script);
+            window.spoonsLoaded = true;
+        }
     });
 </script>
+
 
 
 <script>
 
     document.querySelector('.box8 .button').addEventListener('click', function () {
-        // Show the BS popup
         document.getElementById('cuarenta-popup').style.display = 'block';
     });
 

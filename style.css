@@ -414,7 +414,7 @@ h2{
 }
 
 .pile-section {
-    margin: 4px 0 4px 0;
+    margin: 2px 0 4px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -422,7 +422,7 @@ h2{
 
 
 .claim {
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     font-weight: bold;
     font-size: 18px;
     user-select: none;
@@ -431,7 +431,7 @@ h2{
 
 
 .pile-count {
-    margin-top: 4px;
+    margin-top: 2px;
     font-size: 14px;
     user-select: none;
 }
@@ -534,7 +534,6 @@ button:hover {
     margin-bottom: 6px;
 }
 
-
 .popup .close {
   position: absolute;
   top: 20px;
@@ -610,7 +609,7 @@ button:hover {
     height: 130px;
     display: block;
     margin: 0 auto 15px auto;
-    position: relative; /* or static */
+    position: relative;
     z-index: 1;
 }
 
@@ -625,7 +624,6 @@ button:hover {
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 }
-
 
 .player-overhead
 {
@@ -648,4 +646,28 @@ button:hover {
     left: 42%;
     transform: translate(-50%, -50%);
     z-index: 2;
+}
+
+#spoons-popup {
+    display: none;
+}
+
+#card-choice-popup {
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.popup-content-choice {
+    width: 340px;
+    background: rgba(255, 243, 198, 0.95);
+    border: 2px solid #a6192e;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(122, 25, 18, 0.3);
+    font-family: 'KrusyidaScript';
+    color: #3a1e1e;
+    text-align: center;
 }
