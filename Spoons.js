@@ -211,3 +211,4 @@ function openPopup() {
 function closePopup() {
     document.getElementById('spoons-popup').style.display = 'none';
 }
+
